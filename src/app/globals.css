@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-canvas text-bone antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-accent-oxblood/40 text-bone;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent-oxblood;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background-image: linear-gradient(135deg, #7b0f1f 0%, #3b1144 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .max-ch {
+    max-width: 65ch;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-safe-animate {
+      animation: none !important;
+    }
+  }
+}
