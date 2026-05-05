@@ -54,7 +54,7 @@ export default function PricingPage() {
       <div className="mx-auto max-w-6xl space-y-16 px-4 py-20 sm:px-6 lg:px-8">
         <SectionReveal className="max-w-3xl space-y-4">
           <MonoLabel className="text-accent-violet">Allocation only</MonoLabel>
-          <h1 className="font-sans text-4xl font-extrabold uppercase leading-none tracking-[0.04em] text-bone sm:text-5xl md:text-[56px]">
+          <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-5xl md:text-[56px]">
             Tiers before sticker price
           </h1>
           <p className="text-sm leading-relaxed text-mute">
@@ -79,10 +79,10 @@ export default function PricingPage() {
                 ) : null}
                 <CardContent className="flex h-full flex-col gap-5 pt-8">
                   <div>
-                    <h2 className="text-xl font-bold uppercase tracking-[0.16em] text-bone">
+                    <h2 className="text-xl font-bold tracking-tight text-bone">
                       {tier.name}
                     </h2>
-                    <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-mute">
+                    <p className="mt-3 font-mono text-xs tracking-wide text-mute">
                       {tier.credits}
                     </p>
                   </div>
@@ -96,7 +96,10 @@ export default function PricingPage() {
                   </ul>
                   <div className="mt-auto space-y-2 border-t border-border-bone pt-6">
                     <p className="font-mono text-lg text-bone">$XX / mo</p>
-                    <Link href="/waitlist" className={cn(buttonVariants({ variant: "secondary", size: "md" }), "inline-flex w-full justify-center")}>
+                    <Link
+                      href="/waitlist"
+                      className={cn(buttonVariants({ variant: "secondary", size: "md" }), "inline-flex w-full justify-center")}
+                    >
                       Request access
                     </Link>
                   </div>
@@ -109,7 +112,7 @@ export default function PricingPage() {
         <SectionReveal className="max-w-3xl space-y-4 border-t border-border-bone pt-12">
           <h2 className="text-xl font-semibold text-bone">Footnote</h2>
           <p className="text-sm leading-relaxed text-mute">
-            Enterprise contracts layer SLAs, retention policy, and optional on-prem routing on top of these baselines. If you are pricing a procurement cycle, use the waitlist and include jurisdiction — Delaware law, US-hosted defaults, EU routing available under separate agreement.
+            Enterprise contracts layer SLAs, retention policy, and optional on-prem routing on top of these baselines. If you are pricing a procurement cycle, use the waitlist and include jurisdiction — Wyoming law, US-hosted defaults, EU routing available under separate agreement.
           </p>
         </SectionReveal>
       </div>

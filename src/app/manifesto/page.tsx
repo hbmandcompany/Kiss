@@ -16,7 +16,7 @@ export default function ManifestoPage() {
             <MonoLabel className="text-accent-oxblood">Hated By Many LLC</MonoLabel>
           </SectionReveal>
           <SectionReveal delay={0.05}>
-            <h1 className="font-sans text-4xl font-extrabold uppercase leading-none tracking-[0.04em] text-bone sm:text-5xl md:text-[56px]">
+            <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-5xl md:text-[56px]">
               Founding thesis
             </h1>
           </SectionReveal>

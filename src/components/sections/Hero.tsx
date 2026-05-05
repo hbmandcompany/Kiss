@@ -46,14 +46,14 @@ export function Hero() {
         >
           <motion.div custom={0} variants={lineVariants}>
             <MonoLabel className="text-mute">
-              KISS.PHOTOGRAPHY — V0.1 PRIVATE ALPHA
+              Kiss.photography · v0.1 private alpha
             </MonoLabel>
           </motion.div>
 
           <motion.h1
             custom={1}
             variants={lineVariants}
-            className="font-sans text-[56px] font-extrabold uppercase leading-[0.95] tracking-[0.02em] text-bone sm:text-7xl md:text-[96px]"
+            className="font-sans text-[56px] font-extrabold leading-[0.95] tracking-[-0.02em] text-bone sm:text-7xl md:text-[96px]"
           >
             <span className="block">Reconstruct the version</span>
             <span className="block">
@@ -95,8 +95,8 @@ export function Hero() {
           </motion.div>
 
           <motion.div custom={4} variants={lineVariants}>
-            <p className="font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-mute sm:text-xs">
-              Built on FLUX · Trained on Lambda Labs · Identity-preserving · Off-chain generation
+            <p className="font-mono text-[11px] leading-relaxed tracking-wide text-mute sm:text-xs">
+              Built on FLUX · trained on Lambda Labs · identity-preserving · off-chain generation
             </p>
           </motion.div>
         </motion.div>

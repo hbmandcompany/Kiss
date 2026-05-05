@@ -60,7 +60,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Who operates Kiss.photography?",
-    a: "Hated By Many LLC, a Delaware limited liability company. This site is marketing. The application lives on a separate subdomain and requires authentication.",
+    a: "Hated By Many LLC, a Wyoming limited liability company. This site is marketing. The application lives on a separate subdomain and requires authentication.",
   },
   {
     q: "How do I reach support?",

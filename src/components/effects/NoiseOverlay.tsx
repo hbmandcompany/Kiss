@@ -4,7 +4,7 @@ export function NoiseOverlay() {
   return (
     <svg
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-[60] h-full w-full opacity-[0.04] mix-blend-overlay"
+      className="noise-overlay pointer-events-none fixed inset-0 z-[1] h-full w-full opacity-[0.04] mix-blend-overlay"
       xmlns="http://www.w3.org/2000/svg"
     >
       <filter id="global-noise">

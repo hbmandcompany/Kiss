@@ -32,10 +32,10 @@ export function TechnicalCredibility() {
         <SectionReveal delay={0.06}>
           <div className="overflow-hidden rounded-sm border border-border-bone bg-surface shadow-inner-glow">
             <div className="flex items-center justify-between border-b border-border-bone bg-canvas/80 px-4 py-2">
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-mute">
+              <span className="font-mono text-[11px] tracking-wide text-mute">
                 system_architecture.json
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-violet/90">
+              <span className="font-mono text-[10px] tracking-wide text-accent-violet/90">
                 read-only
               </span>
             </div>

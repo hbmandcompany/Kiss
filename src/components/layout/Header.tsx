@@ -28,7 +28,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-3 focus-visible:outline-none">
           <MonoLabel className="text-bone/90 transition-colors duration-hover group-hover:text-accent-crimson">
-            KISS.PHOTOGRAPHY
+            Kiss.photography
           </MonoLabel>
         </Link>
 
@@ -38,7 +38,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "font-mono text-[11px] uppercase tracking-[0.18em] text-mute transition-colors duration-hover hover:text-bone",
+                "font-mono text-[11px] tracking-wide text-mute transition-colors duration-hover hover:text-bone",
                 pathname === link.href && "text-bone",
               )}
             >
@@ -76,7 +76,7 @@ export function Header() {
             >
               <div className="flex items-center justify-between">
                 <Dialog.Title asChild>
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-mute">
+                  <span className="font-mono text-xs tracking-wide text-mute">
                     Navigation
                   </span>
                 </Dialog.Title>
@@ -104,7 +104,7 @@ export function Header() {
                   >
                     <Link
                       href={link.href}
-                      className="block text-3xl font-extrabold uppercase tracking-[0.08em] text-bone sm:text-4xl"
+                      className="block text-3xl font-extrabold tracking-tight text-bone sm:text-4xl"
                     >
                       {link.label}
                     </Link>

@@ -16,7 +16,7 @@ export function FAQ() {
         </SectionReveal>
 
         <SectionReveal delay={0.06}>
-          <Accordion.Root type="single" collapsible className="space-3">
+          <Accordion.Root type="single" collapsible className="space-y-3">
             {faqItems.map((item, i) => (
               <Accordion.Item
                 key={item.q}
@@ -24,7 +24,7 @@ export function FAQ() {
                 className="rounded-sm border border-border-bone bg-surface/80 shadow-inner-glow"
               >
                 <Accordion.Header>
-                  <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-4 py-4 text-left font-sans text-sm font-semibold uppercase tracking-[0.08em] text-bone transition-colors duration-hover hover:text-bone focus-visible:outline-none">
+                  <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-4 py-4 text-left font-sans text-sm font-semibold tracking-tight text-bone transition-colors duration-hover hover:text-bone focus-visible:outline-none">
                     <span>{item.q}</span>
                     <ChevronDown
                       className="h-4 w-4 shrink-0 text-mute transition-transform duration-hover group-data-[state=open]:rotate-180"

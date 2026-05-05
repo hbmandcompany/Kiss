@@ -20,4 +20,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Company
 
-Operated by **Hated By Many LLC** (Delaware).
+Operated by **Hated By Many LLC** (Wyoming).

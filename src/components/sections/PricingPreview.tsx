@@ -79,10 +79,10 @@ export function PricingPreview() {
                 ) : null}
                 <CardContent className="flex flex-1 flex-col gap-6 pt-8">
                   <div>
-                    <h3 className="text-xl font-bold uppercase tracking-[0.16em] text-bone">
+                    <h3 className="text-xl font-bold tracking-tight text-bone">
                       {tier.name}
                     </h3>
-                    <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-mute">
+                    <p className="mt-3 font-mono text-xs tracking-wide text-mute">
                       {tier.credits}
                     </p>
                   </div>

@@ -9,7 +9,7 @@ export default function NotFound() {
     <div className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-10 px-4 py-24 sm:px-6 lg:px-8">
       <div className="space-y-4">
         <MonoLabel className="text-accent-crimson">404 · Vector out of bounds</MonoLabel>
-        <h1 className="font-sans text-4xl font-extrabold uppercase leading-none tracking-[0.06em] text-bone sm:text-6xl">
+        <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-6xl">
           This route does not exist.
         </h1>
         <p className="max-ch text-sm leading-relaxed text-mute">

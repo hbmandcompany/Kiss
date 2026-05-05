@@ -43,7 +43,7 @@ export function WaitlistCTA() {
       <div className="mx-auto max-w-3xl space-y-10 px-4 sm:px-6 lg:px-8">
         <SectionReveal>
           <div className="space-y-4">
-            <h2 className="font-sans text-3xl font-bold uppercase tracking-[0.04em] text-bone sm:text-4xl md:text-[56px]">
+            <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-bone sm:text-4xl md:text-[56px]">
               Admission is limited. The waitlist is not.
             </h2>
             <p className="max-ch text-sm leading-relaxed text-mute">
@@ -66,7 +66,7 @@ export function WaitlistCTA() {
                 className="sm:flex-1"
               />
               <Button type="submit" variant="primary" size="lg" className="sm:w-44" disabled={status === "loading"}>
-                {status === "loading" ? "Submitting…" : "Submit"}
+                {status === "loading" ? "Submitting…" : "Join waitlist"}
               </Button>
             </div>
 

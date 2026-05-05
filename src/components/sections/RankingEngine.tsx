@@ -60,7 +60,7 @@ export function RankingEngine() {
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 z-[100] bg-canvas/80 backdrop-blur-sm" />
               <Dialog.Content className="fixed left-1/2 top-1/2 z-[101] w-[min(520px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 rounded-sm border border-border-emphasis bg-surface p-6 shadow-inner-glow-strong">
-                <Dialog.Title className="font-mono text-xs uppercase tracking-[0.22em] text-mute">
+                <Dialog.Title className="font-mono text-xs tracking-wide text-mute">
                   Signal detail
                 </Dialog.Title>
                 <Dialog.Description className="mt-4 space-y-3 text-sm leading-relaxed text-bone">
@@ -76,7 +76,7 @@ export function RankingEngine() {
                   <Dialog.Close asChild>
                     <button
                       type="button"
-                      className="rounded-sm border border-border-bone px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-bone transition-colors duration-hover hover:border-accent-oxblood"
+                      className="rounded-sm border border-border-bone px-4 py-2 font-mono text-[11px] tracking-wide text-bone transition-colors duration-hover hover:border-accent-oxblood"
                     >
                       Close
                     </button>

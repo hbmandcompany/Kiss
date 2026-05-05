@@ -92,7 +92,7 @@ export function Reconstruction() {
               style={{ left: `${pct}%`, transform: "translateX(-50%)" }}
             />
             <div
-              className="pointer-events-none absolute top-1/2 -translate-y-1/2 rounded-sm border border-border-emphasis bg-surface px-2 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-bone shadow-inner-glow"
+              className="pointer-events-none absolute top-1/2 -translate-y-1/2 rounded-sm border border-border-emphasis bg-surface px-2 py-1 font-mono text-[10px] tracking-wide text-bone shadow-inner-glow"
               style={{ left: `${pct}%`, transform: "translate(-50%, -50%)" }}
             >
               Scrub
@@ -100,7 +100,7 @@ export function Reconstruction() {
           </div>
 
           <MonoLabel className="block text-center text-mute">
-            Input → 32 candidates generated → Ranked → Top 6 selected
+            Input → 32 candidates generated → ranked → top 6 selected
           </MonoLabel>
         </SectionReveal>
       </div>

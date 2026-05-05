@@ -16,12 +16,12 @@ export default function PrivacyPage() {
             <MonoLabel className="text-mute">Legal</MonoLabel>
           </SectionReveal>
           <SectionReveal delay={0.05}>
-            <h1 className="font-sans text-3xl font-extrabold uppercase tracking-[0.04em] text-bone sm:text-4xl">
+            <h1 className="font-sans text-3xl font-extrabold leading-tight tracking-tight text-bone sm:text-4xl">
               Privacy policy
             </h1>
           </SectionReveal>
           <SectionReveal delay={0.08}>
-            <p className="text-xs font-mono uppercase tracking-[0.16em] text-mute">
+            <p className="text-xs font-mono tracking-wide text-mute">
               Last updated · 2026-05-03 · Hated By Many LLC
             </p>
           </SectionReveal>

@@ -38,11 +38,10 @@ export function HowItWorks() {
             <SectionReveal key={step.n} delay={0.06 * i}>
               <Card className="group h-full transition-[border-color,box-shadow] duration-hover hover:border-border-emphasis hover:shadow-inner-glow">
                 <CardContent className="space-y-4 pt-6">
-                  <p className="font-mono text-3xl font-semibold text-accent-violet">
-                    {step.n}
-                  </p>
-                  <h3 className="text-xl font-semibold tracking-tight text-bone">
-                    {step.title}
+                  <h3 className="font-mono text-xl font-semibold tracking-tight text-bone">
+                    <span className="text-accent-violet">{step.n}</span>
+                    <span className="text-mute"> — </span>
+                    <span>{step.title}</span>
                   </h3>
                   <p className="text-sm leading-relaxed text-mute">{step.body}</p>
                 </CardContent>

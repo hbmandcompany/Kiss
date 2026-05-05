@@ -16,12 +16,12 @@ export default function TermsPage() {
             <MonoLabel className="text-mute">Legal</MonoLabel>
           </SectionReveal>
           <SectionReveal delay={0.05}>
-            <h1 className="font-sans text-3xl font-extrabold uppercase tracking-[0.04em] text-bone sm:text-4xl">
+            <h1 className="font-sans text-3xl font-extrabold leading-tight tracking-tight text-bone sm:text-4xl">
               Terms of service
             </h1>
           </SectionReveal>
           <SectionReveal delay={0.08}>
-            <p className="text-xs font-mono uppercase tracking-[0.16em] text-mute">
+            <p className="text-xs font-mono tracking-wide text-mute">
               Last updated · 2026-05-03 · Hated By Many LLC
             </p>
           </SectionReveal>
@@ -29,7 +29,7 @@ export default function TermsPage() {
 
         <SectionReveal className="space-y-6 text-sm leading-relaxed text-mute">
           <p>
-            These terms govern your use of the public marketing website at kiss.photography and any related pre-release surfaces operated by Hated By Many LLC, a Delaware limited liability company (“Hated By Many,” “we,” or “us”). Separate terms apply to the authenticated product subdomain once provisioned.
+            These terms govern your use of the public marketing website at kiss.photography and any related pre-release surfaces operated by Hated By Many LLC, a Wyoming limited liability company (“Hated By Many,” “we,” or “us”). Separate terms apply to the authenticated product subdomain once provisioned.
           </p>
           <h2 className="text-base font-semibold text-bone">Acceptable use</h2>
           <p>

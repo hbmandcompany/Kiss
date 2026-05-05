@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { NoiseOverlay } from "@/components/effects/NoiseOverlay";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { VercelAnalytics } from "@/components/layout/VercelAnalytics";
 
 import "./globals.css";
 
@@ -65,6 +66,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <VercelAnalytics />
       </body>
     </html>
   );

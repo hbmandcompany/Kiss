@@ -27,7 +27,7 @@ export function SectionHeader({
       <Tag
         className={cn(
           Tag === "h2" &&
-            "text-bone text-4xl font-bold uppercase leading-none tracking-[0.04em] sm:text-5xl md:text-[56px]",
+            "text-bone text-4xl font-bold leading-tight tracking-[-0.02em] sm:text-5xl md:text-[56px]",
           Tag === "h3" &&
             "text-bone text-2xl font-semibold leading-tight tracking-tight sm:text-[32px]",
           titleClassName,

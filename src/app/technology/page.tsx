@@ -14,7 +14,7 @@ export default function TechnologyPage() {
         <SectionReveal>
           <div className="space-y-6">
             <MonoLabel className="text-accent-violet">Deep read</MonoLabel>
-            <h1 className="font-sans text-4xl font-extrabold uppercase leading-none tracking-[0.04em] text-bone sm:text-5xl md:text-[56px]">
+            <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-5xl md:text-[56px]">
               Architecture memo
             </h1>
             <p className="text-base leading-relaxed text-mute">
