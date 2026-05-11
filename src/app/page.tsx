@@ -1,25 +1,25 @@
-import { FAQ } from "@/components/sections/FAQ";
 import { Hero } from "@/components/sections/Hero";
-import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Infrastructure } from "@/components/sections/Infrastructure";
+import { LearningEngine } from "@/components/sections/LearningEngine";
 import { Manifesto } from "@/components/sections/Manifesto";
-import { PricingPreview } from "@/components/sections/PricingPreview";
-import { RankingEngine } from "@/components/sections/RankingEngine";
-import { Reconstruction } from "@/components/sections/Reconstruction";
-import { TechnicalCredibility } from "@/components/sections/TechnicalCredibility";
+import { Method } from "@/components/sections/Method";
+import { Philosophy } from "@/components/sections/Philosophy";
+import { Pricing } from "@/components/sections/Pricing";
+import { RankingFunction } from "@/components/sections/RankingFunction";
 import { WaitlistCTA } from "@/components/sections/WaitlistCTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Reconstruction />
-      <HowItWorks />
-      <TechnicalCredibility />
-      <RankingEngine />
-      <PricingPreview />
+      <Philosophy />
+      <LearningEngine />
+      <Method />
+      <RankingFunction />
+      <Infrastructure />
+      <Pricing />
       <Manifesto />
       <WaitlistCTA />
-      <FAQ />
     </>
   );
 }

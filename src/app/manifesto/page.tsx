@@ -1,48 +1,49 @@
 import type { Metadata } from "next";
 
-import { SectionReveal } from "@/components/motion/SectionReveal";
+import { PageScaffold } from "@/components/layout/PageScaffold";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 
 export const metadata: Metadata = {
-  title: "Manifesto",
+  title: "Manifeste",
 };
+
+function Divider() {
+  return <div className="my-12 h-px w-full bg-ironHairline" aria-hidden />;
+}
 
 export default function ManifestoPage() {
   return (
-    <div className="border-t border-border-bone">
-      <article className="mx-auto max-w-3xl space-y-12 px-4 py-20 sm:px-6 lg:max-w-[65ch] lg:px-8">
-        <header className="space-y-4">
-          <SectionReveal>
-            <MonoLabel className="text-accent-oxblood">Hated By Many LLC</MonoLabel>
-          </SectionReveal>
-          <SectionReveal delay={0.05}>
-            <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-5xl md:text-[56px]">
-              Founding thesis
-            </h1>
-          </SectionReveal>
-        </header>
+    <PageScaffold>
+      <article className="border-t border-ironHairline py-16">
+        <div className="mx-auto max-w-prose">
+          <MonoLabel className="text-ash">DOCUMENT FONDATEUR</MonoLabel>
+          <h1 className="mt-6 font-serif text-[44px] font-normal leading-tight text-bone lg:text-[56px]">
+            La maison et le moteur
+          </h1>
+          <p className="mt-8 font-body text-xl leading-relaxed text-bone/85">
+            Kiss.photography treats portraiture as an operational surface. The same image must read
+            correctly in a casting PDF, a dating grid, and a print proof. That requires more than a
+            filter — it requires a system that can propose, constrain, and rank.
+          </p>
 
-        <SectionReveal delay={0.08} className="space-y-6 text-sm leading-relaxed text-mute">
-          <p>
-            Public images are not memories. They are bets. Every profile frame, press still, and launch photo is a prediction about which version of a person the world will accept as real.
+          <Divider />
+
+          <h2 className="font-serif text-3xl font-normal text-bone">Rendering versus decision</h2>
+          <p className="mt-4 font-body text-lg leading-relaxed text-bone/85">
+            Diffusion answers the question of what is plausible. The ranking engine answers what is
+            defensible. The two are separated on purpose: one can be swapped as models improve; the
+            other accumulates your editorial judgment.
           </p>
-          <p>
-            Classic retouching assumes there is a “true” capture hiding in a bad one. We do not operate on that assumption. We assume there are many plausible captures that never happened because the shutter, the light, and the room failed to agree.
+
+          <Divider />
+
+          <h2 className="font-serif text-3xl font-normal text-bone">Cohort discipline</h2>
+          <p className="mt-4 font-body text-lg leading-relaxed text-bone/85">
+            We admit slowly. Each cohort tightens latency, identity stability, and calibration before
+            the next window opens. The waitlist is not marketing — it is capacity planning.
           </p>
-          <p>
-            Kiss.photography generates that missing stack. It ranks against environments where those bets are cashed — hiring panels, investor meetings, nightlife optics, publication crops. The output is not a moral claim about beauty. It is a forecast about performance.
-          </p>
-          <p>
-            We are uncomfortable with vague “AI photo” language. If you cannot point to the backbone, the constraint layer, the ranking function, and the deployment path, you do not have a product. You have a filter.
-          </p>
-          <p className="border-l border-border-emphasis pl-4 text-bone/90">
-            We are not in the business of making people look better. We are in the business of predicting which version of a person performs best in the environments where they will be evaluated.
-          </p>
-          <p>
-            If that sentence reads cold, good. Precision is colder than persuasion. We would rather lose a sale than lie about what the system optimizes.
-          </p>
-        </SectionReveal>
+        </div>
       </article>
-    </div>
+    </PageScaffold>
   );
 }

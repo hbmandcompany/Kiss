@@ -1,46 +1,48 @@
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva(
-  "rounded-sm border border-border-bone bg-surface/90 backdrop-blur-sm",
-  {
-    variants: {
-      variant: {
-        default: "shadow-none",
-        elevated:
-          "border-border-emphasis/80 shadow-inner-glow-strong [background-image:linear-gradient(180deg,rgba(59,17,68,0.12),rgba(19,9,13,0.96))]",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  },
-);
-
-export type CardProps = React.HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof cardVariants>;
+export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
+  lift?: boolean;
+};
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, ...props }, ref) => (
-    <div ref={ref} className={cn(cardVariants({ variant }), className)} {...props} />
-  ),
+  ({ className, lift = true, children }, ref) => {
+    const reduce = useReducedMotion();
+
+    if (reduce || !lift) {
+      return (
+        <div
+          ref={ref}
+          className={cn(
+            "rounded-[2rem] border border-ironHairline bg-gunmetal p-8 shadow-card backdrop-blur-sm transition-shadow duration-600 ease-luxury md:p-10",
+            className,
+          )}
+        >
+          {children}
+        </div>
+      );
+    }
+
+    return (
+      <motion.div
+        ref={ref}
+        className={cn(
+          "rounded-[2rem] border border-ironHairline bg-gunmetal p-8 shadow-card backdrop-blur-sm transition-shadow duration-600 ease-luxury md:p-10",
+          className,
+        )}
+        whileHover={{
+          y: -4,
+          boxShadow: "0 32px 64px -20px rgba(44, 40, 36, 0.14)",
+        }}
+        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      >
+        {children}
+      </motion.div>
+    );
+  },
 );
 Card.displayName = "Card";
-
-export const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex flex-col gap-1 p-6 pb-4", className)} {...props} />
-));
-CardHeader.displayName = "CardHeader";
-
-export const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-));
-CardContent.displayName = "CardContent";

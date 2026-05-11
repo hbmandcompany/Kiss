@@ -1,27 +1,28 @@
 "use client";
 
-import { type VariantProps } from "class-variance-authority";
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { Slot } from "@radix-ui/react-slot";
+import type { VariantProps } from "class-variance-authority";
 import * as React from "react";
 
+import { buttonVariants } from "@/lib/button-styles";
 import { cn } from "@/lib/utils";
 
-import { buttonVariants } from "./button-variants";
+const motionLift =
+  "hover:scale-[1.02] active:scale-[0.99] transition-transform duration-500 ease-luxury";
 
-export type ButtonProps = HTMLMotionProps<"button"> &
-  VariantProps<typeof buttonVariants>;
-
-const MotionButton = motion.button;
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+    motionLift?: boolean;
+  };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, type = "button", ...props }, ref) => {
+  ({ className, variant, asChild, motionLift: lift = true, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
     return (
-      <MotionButton
-        ref={ref}
-        type={type}
-        whileTap={{ scale: 0.97 }}
-        transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        className={cn(buttonVariants({ variant, size, className }))}
+      <Comp
+        className={cn(buttonVariants({ variant }), lift && motionLift, className)}
+        ref={ref as never}
         {...props}
       />
     );

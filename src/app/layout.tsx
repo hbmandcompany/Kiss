@@ -1,72 +1,79 @@
 import type { Metadata } from "next";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
+import { Cormorant_Garamond, Crimson_Pro, JetBrains_Mono } from "next/font/google";
 
-import { NoiseOverlay } from "@/components/effects/NoiseOverlay";
 import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { VercelAnalytics } from "@/components/layout/VercelAnalytics";
-
+import { Navigation } from "@/components/layout/Navigation";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const crimson = Crimson_Pro({
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  variable: "--font-crimson",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
 
 const site = "https://kiss.photography";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site),
   title: {
-    default: "Kiss.photography",
-    template: "%s — Kiss.photography",
+    default: "Kiss Photography - Maison Noire",
+    template: "%s - Kiss Photography",
   },
   description:
-    "Kiss.photography is an AI system for photorealistic identity reconstruction and ranked output selection — built for the surfaces where people are evaluated, not edited.",
-  applicationName: "Kiss.photography",
-  robots: {
-    index: true,
-    follow: true,
-  },
+    "Maison française de reconstruction d'identité photographique. Moteur de classement, pipeline FLUX, accès cohorte — luxe obscur, précision labo.",
+  applicationName: "kiss.photography",
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "fr_FR",
     url: site,
-    siteName: "Kiss.photography",
-    title: "Kiss.photography — Identity reconstruction / ranked photography",
+    siteName: "kiss.photography",
+    title: "kiss.photography — Maison de reconstruction",
     description:
-      "AI-driven photorealistic identity reconstruction with explicit ranking, identity preservation, and deployment-ready outputs.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Kiss.photography wordmark on a dark canvas",
-      },
-    ],
+      "Diffusion contrainte, triage par moteur de classement, livraison en six épreuves. Alpha privée.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "kiss.photography" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kiss.photography — Identity reconstruction / ranked photography",
-    description:
-      "AI-driven photorealistic identity reconstruction with explicit ranking and identity preservation.",
+    title: "kiss.photography — Maison Noire",
+    description: "Reconstruction d'identité à l'échelle du laboratoire.",
     images: ["/og-image.png"],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} min-h-dvh bg-canvas font-sans text-bone antialiased`}
-      >
-        <NoiseOverlay />
-        <div className="relative z-10 flex min-h-dvh flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <VercelAnalytics />
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${crimson.variable} ${jetbrains.variable}`}
+    >
+      <body className="min-h-dvh bg-plaster font-body text-ink antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-tan focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-pure"
+        >
+          Skip to main content
+        </a>
+        <Navigation />
+        <main id="main" className="min-h-dvh">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

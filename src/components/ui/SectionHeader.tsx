@@ -1,40 +1,46 @@
 import * as React from "react";
 
+import { MonoLabel } from "@/components/ui/MonoLabel";
 import { cn } from "@/lib/utils";
-
-import { MonoLabel } from "./MonoLabel";
 
 export type SectionHeaderProps = {
   eyebrow: string;
-  title: string;
-  titleClassName?: string;
-  eyebrowClassName?: string;
+  heading: string;
+  align?: "left" | "center";
+  maxWidth?: string;
   className?: string;
-  as?: "h2" | "h3";
+  eyebrowClassName?: string;
+  headingClassName?: string;
 };
 
 export function SectionHeader({
   eyebrow,
-  title,
-  titleClassName,
-  eyebrowClassName,
+  heading,
+  align = "left",
+  maxWidth,
   className,
-  as: Tag = "h2",
+  eyebrowClassName,
+  headingClassName,
 }: SectionHeaderProps) {
+  const lines = heading.split(" / ").filter(Boolean);
+  const alignClass = align === "center" ? "text-center" : "text-left";
+
   return (
-    <div className={cn("max-w-4xl space-y-4", className)}>
-      <MonoLabel className={cn("text-mute", eyebrowClassName)}>{eyebrow}</MonoLabel>
-      <Tag
+    <div className={cn("space-y-4", alignClass, className)}>
+      <MonoLabel className={cn("text-[12px] tracking-[0.28em]", eyebrowClassName)}>{eyebrow}</MonoLabel>
+      <h2
         className={cn(
-          Tag === "h2" &&
-            "text-bone text-4xl font-bold leading-tight tracking-[-0.02em] sm:text-5xl md:text-[56px]",
-          Tag === "h3" &&
-            "text-bone text-2xl font-semibold leading-tight tracking-tight sm:text-[32px]",
-          titleClassName,
+          "text-balance font-serif text-[32px] font-normal leading-[1.15] tracking-tight text-bone sm:text-[40px] lg:text-[48px]",
+          maxWidth,
+          headingClassName,
         )}
       >
-        {title}
-      </Tag>
+        {lines.map((line, i) => (
+          <span key={i} className="block">
+            {line}
+          </span>
+        ))}
+      </h2>
     </div>
   );
 }

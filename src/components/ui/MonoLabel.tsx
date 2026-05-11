@@ -8,7 +8,7 @@ export function MonoLabel({ className, ...props }: MonoLabelProps) {
   return (
     <span
       className={cn(
-        "font-mono text-[12px] font-medium leading-normal tracking-[0.06em] text-mute",
+        "font-mono text-[12px] font-normal uppercase leading-normal tracking-[0.26em] text-ash",
         className,
       )}
       {...props}

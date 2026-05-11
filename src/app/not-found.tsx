@@ -1,29 +1,27 @@
 import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button-variants";
+import { PageScaffold } from "@/components/layout/PageScaffold";
+import { buttonVariants } from "@/lib/button-styles";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { cn } from "@/lib/utils";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-10 px-4 py-24 sm:px-6 lg:px-8">
-      <div className="space-y-4">
-        <MonoLabel className="text-accent-crimson">404 · Vector out of bounds</MonoLabel>
-        <h1 className="font-sans text-4xl font-extrabold leading-tight tracking-tight text-bone sm:text-6xl">
-          This route does not exist.
-        </h1>
-        <p className="max-ch text-sm leading-relaxed text-mute">
-          The URL you requested is not provisioned on this surface. Return to the marketing root or request access through the waitlist.
-        </p>
+    <PageScaffold>
+      <div className="border-t border-ironHairline">
+        <div className="mx-auto flex max-w-xl flex-col gap-6 py-24">
+          <MonoLabel className="text-shadow">404</MonoLabel>
+          <h1 className="font-serif text-4xl font-normal leading-tight text-bone sm:text-5xl">
+            This route is not provisioned.
+          </h1>
+          <p className="font-body text-lg leading-relaxed text-bone/85">
+            The page may have moved during alpha. Use navigation or return to the canvas.
+          </p>
+          <Link href="/" className={cn(buttonVariants({ variant: "secondary" }), "w-fit")}>
+            Back to home
+          </Link>
+        </div>
       </div>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Link href="/" className={cn(buttonVariants({ variant: "primary", size: "lg" }))}>
-          Back to home
-        </Link>
-        <Link href="/waitlist" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>
-          Join the waitlist
-        </Link>
-      </div>
-    </div>
+    </PageScaffold>
   );
 }

@@ -1,114 +1,116 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 
 import { MonoLabel } from "@/components/ui/MonoLabel";
-import {
-  footerCompany,
-  footerLegal,
-  footerProduct,
-  footerTechnology,
-  SITE_VERSION,
-} from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { footerMaison, footerPlatform, footerResources } from "@/lib/constants";
+function UnderlineLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group relative inline-block font-body text-sm text-ink/75 transition-colors duration-500 hover:text-ink"
+    >
+      <span>{children}</span>
+      <span
+        className="absolute bottom-0 left-0 h-px w-0 bg-tan transition-all duration-500 ease-luxury group-hover:w-full"
+        aria-hidden
+      />
+    </Link>
+  );
+}
 
 function Column({
   title,
   children,
-  className,
 }: {
   title: string;
-  children: ReactNode;
-  className?: string;
+  children: React.ReactNode;
 }) {
   return (
-    <div className={cn("space-y-4", className)}>
-      <MonoLabel className="text-bone/80">{title}</MonoLabel>
-      <ul className="space-y-3 text-sm text-mute">
-        {children}
-      </ul>
+    <div className="space-y-4">
+      <h3 className="font-serif text-lg font-normal tracking-wide text-ink">{title}</h3>
+      <ul className="space-y-3">{children}</ul>
     </div>
   );
 }
 
-export function Footer({ className }: { className?: string }) {
-  const year = new Date().getFullYear();
-
+export function Footer() {
   return (
-    <footer className={cn("border-t border-border-bone bg-canvas", className)}>
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
-          <div className="lg:col-span-2 space-y-4">
-            <p className="font-sans text-xl font-bold tracking-tight text-bone">
-              Kiss.photography
+    <footer className="relative isolate overflow-hidden bg-linen">
+      <div className="mx-auto max-w-container px-6 pb-16 pt-24 md:px-12 lg:px-16 lg:pt-28">
+        <div className="racing-deep lift-on-hover rounded-[2.5rem] border border-tanDark/30 px-8 py-12 text-pure shadow-card md:px-12">
+          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-12">
+            <div className="space-y-5">
+              <MonoLabel className="text-[11px] tracking-[0.22em] text-pure/75">ATELIER FEATURE</MonoLabel>
+              <h2 className="max-w-xl font-serif text-[32px] font-normal leading-tight text-pure md:text-[36px]">
+                Cohort 01 — Apply for early atelier access before general availability.
+              </h2>
+              <p className="max-w-xl font-body text-base leading-relaxed text-pure/88">
+                Limited invitations to a curated initial cohort. Direct access to the studio team.
+                Custom LoRA fine-tuning on your image library included.
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-4 lg:items-end">
+              <Link
+                href="/waitlist"
+                className="rounded-full bg-pure px-8 py-4 font-body text-base font-medium text-ink transition-colors duration-500 hover:bg-sunYellow"
+              >
+                Apply to Cohort 01
+              </Link>
+              <Link
+                href="/legal/terms"
+                className="font-body text-sm text-pure/85 underline underline-offset-4 transition-colors duration-500 hover:text-sunYellow"
+              >
+                Read the cohort terms →
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 grid gap-16 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
+          <div className="space-y-5 md:col-span-2 lg:col-span-2">
+            <p className="font-serif text-[30px] font-semibold tracking-tight text-ink">
+              kiss<span className="text-tan">.</span>photography
             </p>
-            <p className="max-w-sm text-sm leading-relaxed text-mute">
-              Photoreal identity reconstruction ranked for the contexts where you are measured, not the contexts where you are comfortable.
+            <p className="font-body text-lg text-ink/90">
+              Une maison française de reconstruction d&apos;identité photographique.
+            </p>
+            <p className="max-w-sm font-body text-sm leading-relaxed text-ink/70">
+              Generation, ranking, training, and delivery operated in-house. Lab-grade infrastructure.
+              Editorial discipline.
             </p>
           </div>
-          <Column title="Product">
-            {footerProduct.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="transition-colors duration-hover hover:text-bone focus-visible:outline-none"
-                >
-                  {item.label}
-                </Link>
+          <Column title="Plateforme">
+            {footerPlatform.map((item) => (
+              <li key={item.label}>
+                <UnderlineLink href={item.href}>{item.label}</UnderlineLink>
               </li>
             ))}
           </Column>
-          <Column title="Company">
-            {footerCompany.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="transition-colors duration-hover hover:text-bone focus-visible:outline-none"
-                >
-                  {item.label}
-                </Link>
+          <Column title="Maison">
+            {footerMaison.map((item) => (
+              <li key={item.label + item.href}>
+                <UnderlineLink href={item.href}>{item.label}</UnderlineLink>
               </li>
             ))}
           </Column>
-          <Column title="Technology">
-            {footerTechnology.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="transition-colors duration-hover hover:text-bone focus-visible:outline-none"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </Column>
-          <Column title="Legal">
-            {footerLegal.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="transition-colors duration-hover hover:text-bone focus-visible:outline-none"
-                >
-                  {item.label}
-                </Link>
+          <Column title="Ressources">
+            {footerResources.map((item) => (
+              <li key={item.href + item.label}>
+                <UnderlineLink href={item.href}>{item.label}</UnderlineLink>
               </li>
             ))}
           </Column>
         </div>
 
-        <div className="mt-14 border-t border-border-bone pt-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-sans text-xs tracking-wide text-bone/80">
-              Hated By Many LLC · Wyoming
-            </p>
-            <div className="flex flex-col gap-1 sm:items-end">
-              <MonoLabel className="text-mute">
-                Build {SITE_VERSION}
-              </MonoLabel>
-              <MonoLabel className="text-mute">
-                © {year} Hated By Many LLC
-              </MonoLabel>
-            </div>
-          </div>
+        <hr className="mt-20 border-ink/10" />
+        <div className="mt-8 grid gap-4 pb-16 font-mono text-xs text-fog md:grid-cols-2">
+          <p>© 2026 KISS.PHOTOGRAPHY · HATED BY MANY LLC</p>
+          <p className="md:text-right">HANDCRAFTED IN-HOUSE · SEATTLE / DELAWARE</p>
         </div>
       </div>
     </footer>
